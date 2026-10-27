@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            {% block title %}
+                Health Track 
+            {% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        {% block extra_css %} <!--  Bloco vazio para q outra página possa adicionar um css extra -->
+        {% endblock %}
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        
+        <header>
+
+            <nav id="nav-bar">
+
+                <span id="logo">
+                    <ion-icon name="fitness-outline"></ion-icon>Helth Track
+                </span>
+
+                <ul id="menu">
+
+                    <li><a href="{% url 'home' %}">Home</a></li> <!-- Pega o nome das rotas na urls.py, ou seja, procura a rota pelo nome -->
+
+                    {% if user.is_authenticated %}
+                
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                        </li>
+                    {% endif %}
+
+                    <li><a href="{% url 'bmi' %}">Calculate BMI</a></li>
+
+                    <li><a href="{% url 'nutrition' %}">Nutrition</a></li>
+
+                    <li><a href="{% url 'exercises' %}">Exercises</a></li>
+
+                    
+
+                </ul>
+            </nav>
+        </header>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        {% block body %} <!-- Bloco vazio para q outra página possa adicionar um corpo extra -->
+        {% endblock %}
+
+        {% block script %}
+        {% endblock %}
+        
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "healthtrack/layout.html" %}
+{% load static %}
+
+    {% block extra_css %}
+        <link href="{% static 'css/nutrition.css' %}" rel="stylesheet">
+    {% endblock %}
+
+{% block body %}
+
+    <div id="grid">
+
+        <section id="sessao">
+            <h1 id="tittle1">Nutrition</h1>
+            <p id="nutri-info"><strong>Nutrition is the science that studies the relationship between food and health. It encompasses the processes of digestion, absorption, metabolism, and the impact of nutrients on the body. A balanced diet, rich in essential nutrients such as carbohydrates, proteins, fats, vitamins, and minerals, is crucial for maintaining good health and preventing diseases. Proper nutrition supports growth, development, energy production, and overall well-being.</strong></p>
+            <img id="nutri_image" src="{% static 'imagens/undraw_healthy-options_ne00.svg' %}">
+
+        </section>
+
+        <section id="infos">
+            <h1 id="tittle2">Healthy Eating Tips</h1>
+
+            <ul id="list_nutri">
+                <li>Include a variety of fruits and vegetables in your diet.</li>
+                <li>Choose whole grains over refined grains.</li>
+                <li>Opt for lean protein sources such as poultry, fish, beans, and nuts.</li>
+                <li>Limit added sugars and saturated fats.</li>
+                <li>Stay hydrated by drinking plenty of water.</li>
+                <li>Practice portion control to avoid overeating.</li>
+            </ul>
+
+        </section>
+
+    </div>
+
+{% endblock %}

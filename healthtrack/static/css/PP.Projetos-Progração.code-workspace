@@ -1,0 +1,54 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../../Documentos/PP.Projetos-Progração"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/Site-Profissional"
+		},
+		{
+			"path": "../../../../../../.."
+		},
+		{
+			"path": "../../../../../../../../../Documentos/Intro-Python_ADS"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/Faker-atvdd_Python"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/Seminario-de-Extensao"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/Projeto_PET"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/Python/diario_bordo"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/Python/atvdd8_N3_Notas"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/Python/atvdd_9_arquivos"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/Python/Projetos_Guidos"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/Python/PET_Flask"
+		}
+	],
+	"settings": {
+		"explorer.compactFolders": false,
+		"workbench.editor.enablePreview": false,
+		"workbench.iconTheme": "material-icon-theme",
+		"workbench.colorTheme": "Dark+",
+		"terminal.integrated.fontSize": 16,
+		"terminal.integrated.profiles.windows": {
+			"Git Bash": {
+				"source": "Git Bash"
+			}
+		},
+		"terminal.integrated.defaultProfile.windows": "Git Bash",
+		"liveServer.settings.multiRootWorkspaceName": "Site-Profissional"
+	}
+}

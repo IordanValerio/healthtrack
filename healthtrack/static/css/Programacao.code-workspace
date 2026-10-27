@@ -1,0 +1,58 @@
+{
+	"folders": [
+		{
+			"name": "PP.Projetos-Progração",
+			"path": "../../../../../../../../../Documentos/PP.Projetos-Progração"
+		},
+		{
+			"name": "Site-Profissional",
+			"path": "../../../../../../../../../Documentos/Site-Profissional"
+		},
+		{
+			"name": "web50",
+			"path": "../../../../../../.."
+		},
+		{
+			"name": "Intro-Python_ADS",
+			"path": "../../../../../../../../../Documentos/Intro-Python_ADS"
+		},
+		{
+			"name": "Faker-atvdd_Python",
+			"path": "../../../../../../../../../Documentos/Faker-atvdd_Python"
+		},
+		{
+			"name": "Projeto_PET",
+			"path": "../../../../../../../../../Documentos/Projeto_PET"
+		},
+		{
+			"name": "atvdd8_N3_Notas",
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/Python/atvdd8_N3_Notas"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/1°-periodo/Python/PET_Flask"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/2°-periodo/Proj.Integrador2/Sistema-de-Eventos"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/2°-periodo/Banco-de-Dados/BD-atvdd01"
+		},
+		{
+			"path": "../../../../../../../../../Documentos/ADS_UEPB/2°-periodo/Banco-de-Dados/atvdd02-Banco-de-Dados"
+		}
+	],
+	"settings": {
+		"explorer.compactFolders": false,
+		"workbench.editor.enablePreview": false,
+		"workbench.iconTheme": "material-icon-theme",
+		"workbench.colorTheme": "Dark+",
+		"terminal.integrated.fontSize": 16,
+		"terminal.integrated.profiles.windows": {
+			"Git Bash": {
+				"source": "Git Bash"
+			}
+		},
+		"terminal.integrated.defaultProfile.windows": "Git Bash",
+		"liveServer.settings.multiRootWorkspaceName": "Site-Profissional"
+	}
+}

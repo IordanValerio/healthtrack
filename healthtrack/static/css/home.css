@@ -1,0 +1,43 @@
+#grid{
+  display: grid;
+  grid-template-areas:
+  "main section";
+  grid-template-rows: 1fr 1fr;
+}
+main{
+  grid-area: main;
+}
+section{
+  grid-area: section;
+}
+#title_home1{
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-left: 40px;
+  font-size: 3rem;
+}
+#title_home2{
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-left: 40px;
+  margin-top: 10px;
+  font-size: 2.5rem;
+}
+#info_home{
+  font-family: 'Montserrat', sans-serif;
+  margin: 40px;
+  font-size: 1.5rem;
+  width: 650px;
+  line-height: 40px;
+}
+#list_home{
+  font-family: Montserrat;
+  margin: 40px;
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+#img_home{
+  width: 400px;
+  height: 500px;
+  margin: 40px;
+  border-radius: 500px;
+  border: 2px solid black;
+}

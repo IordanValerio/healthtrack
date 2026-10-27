@@ -1,0 +1,137 @@
+{% extends 'healthtrack/layout.html' %}
+{% load static %}
+
+{% block body %}
+
+    {% block extra_css %}
+        <link href="{% static 'css/bmi.css' %}" rel="stylesheet">
+    {% endblock %}
+
+    <div id="grid">
+
+        <section id="sessao">
+
+            <h1 id="tittle1">What is BMI and what is it for?</h1>
+            <p id="imc-info"><strong>BMI (Body Mass Index) is a simple indicator, used by the World Health Organization (WHO), to classify whether a person is underweight, at a healthy weight, overweight, or obese. It is calculated through the division of your weight (kg) by your height (cm) squared: BMI = weight / (height x height). It serves as a tool to identify risks of diseases associated with weight. Results between 18.5 and 24.9 are considered normal, although it does not consider muscle mass, so always consult a doctor.</strong></p>
+
+
+                    <!-- Seção de   HISTÓRICO  de IMC -->
+
+                        
+            <div id="historico">
+
+                <h2>My BMI History</h2>
+                <button id="historico-btn">Show history</button>
+
+                <div id="hide-table">
+
+                    {% if historico %} <!-- Pergunta tipo: "existe algum registro em histórico"? -->
+
+                        <table id="historico-tabela">
+                            <thead>
+                                <tr>
+                                    <th>BMI</th>
+                                    <th>Weight</th>
+                                    <th>Height</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for registro in historico %}
+                                    <tr>
+                                        <td>{{ registro.bmi|floatformat:2 }}</td>
+                                        <td>{{ registro.weight|floatformat:1 }} kg</td>
+                                        <td>{{ registro.height|floatformat:2 }} m</td>
+                                        <td>{{ registro.created_at|date:"M d, Y H:i" }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                    {% else %}
+
+                        <p>No BMI records yet.</p>
+
+                    {% endif %}
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CALCULADORA DE IMC -->
+
+
+        <section id="calculadora">
+
+            <h1 id="tittle2">See your BMI</h1>
+
+            <form id ="inputs" method="POST">
+                {% csrf_token %} <!--Insere um token de segurança pra que outros sites não consigam mandar dados pro servidores fingindo sero servidor do usuário (como um sistema de segurança automático) -->
+                
+                <div id="input-box">
+                <label for="altura"> Height:</label>
+                <div class="field">
+                    <input class= "input-altura" type="number" id="altura" name="altura" placeholder="Your height (cm)" value="{{altura}}">
+                </div> 
+                </div>
+
+                <div id="input-box">
+                <label for="peso"> Weight: </label>
+                <div class="field">
+                    <input class= "input-peso" type="number" id="peso" name="peso" placeholder="Your weight (kg)" value="{{peso}}">
+                </div>
+                </div>
+
+                <div id="botoes">
+                    <button class="btn-calculate" type="submit" name="acao" value="calcular">Calculate</button>
+                    <button class="btn-save" type="submit" name="acao" value="salvar">Save</button>
+                </div>
+
+                <div id="resultado">
+                <div id="info1">
+                    <span id="bmi">Your BMI is</span>
+
+                    <span id="imc-valor">
+                        {% if imc %} <!--Checa se a variável "imc" já tem um valor-->
+                            {{ imc }}, <!-- se existir ele mostro -->
+                        {% else %} <!--se não, ele mostra "00" -->
+                            00
+                        {% endif %}
+                        <span id="categoria">
+                            {% if categoria %}
+                                {{ categoria }}
+                            {% endif %}
+                        </span>
+                    </span>
+
+                    {% if erro_login %}
+                        <p>
+                            You need to <a id="link-login" href="{% url 'login' %}">log in</a> before saving your BMI result.
+                        </p>
+                    {% endif %}
+
+                    <!--Sxibe msgm quando tiver salvado-->
+                    {% if mensagem_sucesso %}
+                        <p id="mensagem-sucesso">
+                            {{ mensagem_sucesso }}
+                        </p>
+                    {% endif %}
+
+                </div>
+                    
+                </div>
+                <span id="info2"></span>
+                </div>
+            </form>
+
+        </section>
+
+    </div>
+
+    {% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/bmi.js' %}"></script>
+{% endblock %}

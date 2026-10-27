@@ -1,0 +1,32 @@
+{% extends 'healthtrack/layout.html' %} <!--Faz essa página herdar tudo o que tem na layout.html-->
+{% load static %}
+
+{% block body %}
+
+    {% block extra_css %}
+        <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    {% endblock %}
+
+    <div id="grid">
+        <main>
+
+            <h1 id="title_home1">Hi {{ user.username }}! <br>
+                Welcome to HealthTrack!</h1>
+            <h2 id="title_home2">Take care of your health in a simple way.</h2>
+
+            <p id="info_home"><strong>You can take care of your health in a simple and effective way. Our platform offers tools and information to help you maintain a healthy lifestyle.</strong></p>
+
+            <ul id="list_home">
+                <li>Discover if your BMI is within the healthy range</li>
+                <li>Learn about nutrition and balanced eating</li>
+                <li>See recommended exercises for your health</li>
+            </ul>
+
+        </main>
+
+        <section>
+            <img id="img_home" src="{% static 'imagens/undraw_yoga_i399.svg' %}">
+        </section>
+    </div>
+
+{% endblock %}
